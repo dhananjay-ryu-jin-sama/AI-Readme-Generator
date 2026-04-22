@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-accent-purple: #7C3AED;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+@layer base {
+  body {
+    @apply bg-black text-white selection:bg-accent-purple selection:text-white;
+  }
+  
+  .text-massive {
+    font-size: clamp(4rem, 10vw, 140px);
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .border-thick {
+    border: 6px solid #FFFFFF;
+  }
+
+  .prose h1 { @apply text-4xl font-black uppercase tracking-tighter mb-6 border-b-4 border-black pb-2; }
+  .prose h2 { @apply text-xl font-bold uppercase tracking-tight mt-8 mb-4 border-l-4 border-black pl-3; }
+  .prose h3 { @apply text-lg font-bold mt-6 mb-2; }
+  .prose p { @apply my-4 leading-relaxed text-gray-800; }
+  .prose ul { @apply list-disc list-inside space-y-2 my-4 text-gray-800; }
+  .prose code { @apply font-mono bg-gray-100 text-black px-1.5 py-0.5 rounded-xs text-[0.9em] italic; }
+  .prose pre { @apply bg-gray-50 text-black p-4 rounded-sm my-6 overflow-x-auto border-l-4 border-black font-mono text-sm italic; }
+  .prose pre code { @apply bg-transparent p-0 text-inherit not-italic; }
+  .prose a { @apply underline underline-offset-2 font-bold hover:text-accent-purple transition-colors; }
+}
+
